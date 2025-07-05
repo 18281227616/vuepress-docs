@@ -25,3 +25,4 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}  # ~/.ssh/id_rsa 内容
           source: "docs/.vuepress/dist/"
           target: "/home/lee/MyDoc/.vuepress/dist"  # 服务器目标目录
+          strip_components: 3  # 去掉 docs/.vuepress/dist 三级路径
