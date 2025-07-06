@@ -21,7 +21,7 @@ tag:
 
 为了解决这个问题，人们很久以前就开发了许多种本地版本控制系统，大多都是采用某种简单的数据库来记录文件的历次更新差异。
 
-![本地版本控制系统](https://oss.javaguide.cn/github/javaguide/tools/git/%E6%9C%AC%E5%9C%B0%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F.png)
+![本地版本控制系统](.\git\本地版本控制系统.png)
 
 ### 集中化的版本控制系统
 
@@ -29,7 +29,7 @@ tag:
 
 集中化的版本控制系统都有一个单一的集中管理的服务器，保存所有文件的修订版本，而协同工作的人们都通过客户端连到这台服务器，取出最新的文件或者提交更新。
 
-![集中化的版本控制系统](https://oss.javaguide.cn/github/javaguide/tools/git/%E9%9B%86%E4%B8%AD%E5%8C%96%E7%9A%84%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F.png)
+![集中化的版本控制系统](.\git\集中化的版本控制系统.png)
 
 这么做虽然解决了本地版本控制系统无法让在不同系统上的开发者协同工作的诟病，但也还是存在下面的问题：
 
@@ -42,7 +42,7 @@ tag:
 
 这类系统，客户端并不只提取最新版本的文件快照，而是把代码仓库完整地镜像下来。 这么一来，任何一处协同工作用的服务器发生故障，事后都可以用任何一个镜像出来的本地仓库恢复。 因为每一次的克隆操作，实际上都是一次对代码仓库的完整备份。
 
-![分布式版本控制系统](https://oss.javaguide.cn/github/javaguide/tools/git/%E5%88%86%E5%B8%83%E5%BC%8F%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F.png)
+![分布式版本控制系统](.\git\分布式版本控制系统.png)
 
 分布式版本控制系统可以不用联网就可以工作，因为每个人的电脑上都是完整的版本库，当你修改了某个文件后，你只需要将自己的修改推送给别人就可以了。但是，在实际使用分布式版本控制系统的时候，很少会直接进行推送修改，而是使用一台充当“中央服务器”的东西。这个服务器的作用仅仅是用来方便“交换”大家的修改，没有它大家也一样干活，只是交换修改不方便而已。
 
@@ -66,7 +66,7 @@ Git 在保存和对待各种信息的时候与其它版本控制系统有很大�
 
 具体原理如下图所示，理解起来其实很简单，每当我们提交更新一个文件之后，系统都会记录这个文件做了哪些更新，以增量符号 Δ(Delta)表示。
 
-![](https://oss.javaguide.cn/github/javaguide/tools/git/2019-3deltas.png)
+![](.\git\2019-3deltas.png)
 
 **我们怎样才能得到一个文件的最终版本呢？**
 
@@ -78,7 +78,7 @@ Git 在保存和对待各种信息的时候与其它版本控制系统有很大�
 
 Git 不按照以上方式对待或保存数据。 反之，Git 更像是把数据看作是对小型文件系统的一组快照。 每次你提交更新，或在 Git 中保存项目状态时，它主要对当时的全部文件制作一个快照并保存这个快照的索引。 为了高效，如果文件没有修改，Git 不再重新存储该文件，而是只保留一个链接指向之前存储的文件。 Git 对待数据更像是一个 **快照流**。
 
-![](https://oss.javaguide.cn/github/javaguide/tools/git/2019-3snapshots.png)
+![](./git/2019-3snapshots.png)
 
 ### Git 的三种状态
 
@@ -90,7 +90,7 @@ Git 有三种状态，你的文件可能处于其中之一：
 
 由此引入 Git 项目的三个工作区域的概念：**Git 仓库(.git directory)**、**工作目录(Working Directory)** 以及 **暂存区域(Staging Area)** 。
 
-![](https://oss.javaguide.cn/github/javaguide/tools/git/2019-3areas.png)
+![](h./git/2019-3areas.png)
 
 **基本的 Git 工作流程如下：**
 
@@ -200,7 +200,7 @@ git branch test
 git checkout test
 ```
 
-![](https://oss.javaguide.cn/github/javaguide/tools/git/2019-3%E5%88%87%E6%8D%A2%E5%88%86%E6%94%AF.png)
+![](.\git\2019-3切换分支.png)
 
 你也可以直接这样创建分支并切换过去(上面两条命令的合写)
 
@@ -236,7 +236,7 @@ git push origin
 
 **在线演示学习工具：**
 
-「补充，来自[issue729](https://github.com/Snailclimb/JavaGuide/issues/729)」Learn Git Branching <https://oschina.gitee.io/learn-git-branching/> 。该网站可以方便的演示基本的 git 操作，讲解得明明白白。每一个基本命令的作用和结果。
+Learn Git Branching <https://learngitbranching.js.org/?locale=zh_CN> 。该网站可以方便的演示基本的 git 操作，讲解得明明白白。每一个基本命令的作用和结果。
 
 **推荐阅读：**
 
@@ -245,5 +245,3 @@ git push origin
 - [图解 Git](https://marklodato.github.io/visual-git-guide/index-zh-cn.html)：图解 Git 中的最常用命令。如果你稍微理解 git 的工作原理，这篇文章能够让你理解的更透彻。
 - [猴子都能懂得 Git 入门](https://backlog.com/git-tutorial/cn/intro/intro1_1.html)：有趣的讲解。
 - [Pro Git book](https://git-scm.com/book/zh/v2)：国外的一本 Git 书籍，被翻译成多国语言，质量很高。
-
-<!-- @include: @article-footer.snippet.md -->
