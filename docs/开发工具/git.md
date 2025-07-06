@@ -90,7 +90,7 @@ Git 有三种状态，你的文件可能处于其中之一：
 
 由此引入 Git 项目的三个工作区域的概念：**Git 仓库(.git directory)**、**工作目录(Working Directory)** 以及 **暂存区域(Staging Area)** 。
 
-![](h./git/2019-3areas.png)
+![](./git/2019-3areas.png)
 
 **基本的 Git 工作流程如下：**
 
